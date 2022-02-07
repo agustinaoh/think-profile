@@ -1,7 +1,11 @@
 import React from "react";
 
 export const UserProfile = ({ user, setIsModalShown, setUser }) => {
-  const skillsArray = user.skills.split(",").map((skill) => skill.trim());
+  const skillsArray = user.skills
+    .split(",") /* separate by commas */
+    .filter((skill) => skill.length > 0) /* remove empty strings */
+    .map((skill) => skill.trim()); /* remove extra spaces from strings */
+
   const skills = skillsArray.map((skill) => (
     <p className="rounded-full bg-gray-300 px-4 py-1 mr-2" key={skill}>
       #{skill}
@@ -18,8 +22,7 @@ export const UserProfile = ({ user, setIsModalShown, setUser }) => {
       <p>{user.email}</p>
       <p>{user.city}</p>
       <p>{user.bio}</p>
-      {/* <div className="inline-flex">{user.skills}</div> */}
-      <div className="inline-flex">{skills}</div>
+      {skills && <div className="inline-flex">{skills}</div>}
       <button
         type="button"
         className="px-8 py-4 border border-red-300 hover:cursor mt-4 block"
