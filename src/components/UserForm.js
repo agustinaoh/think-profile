@@ -1,7 +1,8 @@
 import React from "react";
+import Image from "../img/element-1.svg";
 
 export const UserForm = ({ user, setUser, setIsModalShown }) => {
-  const inputStyle = "my-2";
+  const inputStyle = "my-2 w-full py-2 px-4 focus:outline-none";
 
   const handleSubmit = () => {
     setIsModalShown(false);
@@ -18,7 +19,7 @@ export const UserForm = ({ user, setUser, setIsModalShown }) => {
   };
 
   return (
-    <div className="bg-red-50 z-20 w-2/3 p-8 absolute">
+    <div className="bg-thinkprofile-bg z-20 w-2/3 p-8 absolute">
       <button
         onClick={() => setIsModalShown(false)}
         className="hover:cursor right-8 absolute"
@@ -26,12 +27,19 @@ export const UserForm = ({ user, setUser, setIsModalShown }) => {
       >
         X
       </button>
-      <h3 className="text-xl font-bold mb-6">Let's create your profile</h3>
+      <div className="flex items-end mb-8">
+        <img src={Image} alt="decorative element" className="w-12 mr-6" />
+        <h3 className="text-xl font-black text-white">
+          Show us your awesomeness.
+        </h3>
+      </div>
       <form className="">
-        <div className={inputStyle}>
-          <label className="mr-2">Name</label>
+        <div>
+          {/* <label className="mr-2">Name</label> */}
           <input
+            className={inputStyle}
             type="text"
+            autoComplete="off"
             placeholder="Name"
             name="name"
             value={user.name}
@@ -40,48 +48,56 @@ export const UserForm = ({ user, setUser, setIsModalShown }) => {
           />
         </div>
 
-        <div className={inputStyle}>
-          <label className="mr-2">Last Name</label>
+        <div>
+          {/* <label className="mr-2">Last Name</label> */}
           <input
+            className={inputStyle}
             type="text"
+            autoComplete="off"
             placeholder="Last Name"
             name="lastName"
             value={user.lastName}
             onChange={handleChange}
           />
         </div>
-        <div className={inputStyle}>
-          <label className="mr-2">Email</label>
+        <div>
+          {/* <label className="mr-2">Email</label> */}
           <input
+            className={inputStyle}
             type="email"
+            autoComplete="off"
             placeholder="Email"
             name="email"
             value={user.email}
             onChange={handleChange}
           />
         </div>
-        <div className={inputStyle}>
-          <label className="mr-2">City of residence</label>
+        <div>
+          {/* <label className="mr-2">City of residence</label> */}
           <input
+            className={inputStyle}
             type="text"
+            autoComplete="off"
             placeholder="City"
             name="city"
             value={user.city}
             onChange={handleChange}
           />
         </div>
-        <div className={inputStyle}>
-          <label className="mr-2">Short Bio</label>
+        <div>
+          {/* <label className="mr-2">Short Bio</label> */}
           <textarea
+            className={inputStyle}
             placeholder="Tell us about you..."
             name="bio"
             value={user.bio}
             onChange={handleChange}
           />
         </div>
-        <div className={inputStyle}>
-          <label className="mr-2">Field</label>
+        <div>
+          {/* <label className="mr-2">Field</label> */}
           <select
+            className={inputStyle}
             id="field"
             value={user.field}
             onChange={handleChange}
@@ -93,20 +109,25 @@ export const UserForm = ({ user, setUser, setIsModalShown }) => {
             <option value="data">Data</option>
           </select>
         </div>
-        <div className={inputStyle}>
-          <label className="mr-2">Years of experience</label>
+        <div>
+          {/* <label className="mr-2">Years of experience</label> */}
           <input
+            className={inputStyle}
             type="text"
+            autoComplete="off"
             placeholder="Last Name"
             name="experience"
             value={user.experience}
             onChange={handleChange}
           />
         </div>
-        <div className={`${inputStyle} flex flex-col`}>
-          <label className="mr-2">Skills</label>
-          <small>(Comma separated list)</small>
+        <div className={`flex flex-col`}>
+          {/* <label className="mr-2">Skills</label> */}
+          <small className="text-thinkprofile-aqua">
+            (Comma separated list)
+          </small>
           <textarea
+            className={inputStyle}
             placeholder="Don't be shy"
             name="skills"
             value={user.skills}
@@ -114,11 +135,11 @@ export const UserForm = ({ user, setUser, setIsModalShown }) => {
           />
         </div>
         <button
-          className="px-8 py-4 bg-red-400 hover:cursor"
+          className="px-12 py-3 mt-4 font-medium text-lg w-full bg-thinkprofile-blue hover:cursor hover:bg-thinkprofile-aqua hover:text-thinkprofile-blue text-white"
           onClick={handleSubmit}
           type="submit"
         >
-          Build it now!
+          Save changes
         </button>
       </form>
     </div>

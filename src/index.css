@@ -5,3 +5,13 @@
 /* purgecss end ignore */
 
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Work+Sans:ital,wght@0,300;0,500;0,700;0,900;1,400&display=swap");
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+}
