@@ -63,9 +63,11 @@ The deployment of the Main branch is triggered when it is modified.
 
 ## Code quality
 
-<!-- - Rated by Codefactor:
+- Rated by Ligthouse:
+  ![lighthouse](lighthouse.png)
+- Rated by Codefactor:
 
-- [![CodeFactor](https://www.codefactor.io/repository/github/femhack-femhoot/femhoot/badge)](https://www.codefactor.io/repository/github/femhack-femhoot/femhoot) -->
+- [![CodeFactor](https://www.codefactor.io/repository/github/agustinaoh/think-profile/badge)](https://www.codefactor.io/repository/github/agustinaoh/think-profile)
 
 ## Author
 
