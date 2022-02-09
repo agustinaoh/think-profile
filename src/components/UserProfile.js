@@ -1,6 +1,6 @@
 import React from "react";
-import Edit from "../img/edit.svg";
-import Delete from "../img/delete.svg";
+// import Edit from "../img/edit.svg";
+// import Delete from "../img/delete.svg";
 import Quotes from "../img/element-2.svg";
 import { Avatar } from "./Avatar";
 import Background from "../img/bg.jpeg";
