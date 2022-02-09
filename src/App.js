@@ -11,12 +11,13 @@ function App() {
   //   lastName: "Ohan",
   //   email: "agustinaoh.dev@gmail.com",
   //   city: "Barcelona, Spain",
-  //   bio: "“Innovative Front End Developer with 5 years experience building and maintaining responsive websites in the recruiting industry. Proficient in HTML, CSS, jQuery, JavaScript and Angualr; plus modern libraries and frameworks. Passionate about usability and possess working knowledge of Adobe Photoshop & Sketch.“",
+  //   bio: "“Innovative Front End Developer with 1 year of experience building and maintaining responsive websites in the recruiting industry. Proficient in HTML, CSS, JavaScript and React; plus modern libraries and frameworks. Passionate about usability and possess professional knowledge of Adobe Photoshop & Figma.“",
   //   field: "Frontend",
   //   experience: "> 1 year",
   //   skills: "coffee, code, sleep, repeat",
   //   avatarIndex: 1,
   // };
+
   const emptyUser = {
     name: "",
     lastName: "",
@@ -60,7 +61,7 @@ function App() {
         )
       }
 
-      {/* Opened modal */}
+      {/* Opened form */}
       {isFormShown && (
         <UserForm
           setIsFormShown={setIsFormShown}

@@ -6,25 +6,29 @@ import { Avatar } from "./Avatar";
 import Background from "../img/bg.jpeg";
 
 export const UserProfile = ({ user, setIsFormShown, setUser }) => {
-  const skillsArray = user.skills
-    .split(",") /* separate by commas */
-    .filter((skill) => skill.length > 0) /* remove empty strings */
-    .map((skill) => skill.trim()); /* remove extra spaces from strings */
+  let skills = "";
 
-  const skills = skillsArray.map((skill) => (
-    <p
-      className="rounded-full border-2 border-white px-4 py-1 mr-2 italic"
-      key={skill}
-    >
-      # {skill}
-    </p>
-  ));
+  if (typeof user.skills !== undefined) {
+    const skillsArray = user.skills
+      .split(",") /* separate by commas */
+      .filter((skill) => skill.length > 0) /* remove empty strings */
+      .map((skill) => skill.trim()); /* remove extra spaces from strings */
+
+    skills = skillsArray.map((skill) => (
+      <p
+        className="whitespace-nowrap rounded-full border-2 border-white px-4 py-1 mr-2 italic"
+        key={skill}
+      >
+        # {skill}
+      </p>
+    ));
+  }
 
   return (
     <>
       {/* Background image */}
       <div
-        className="w-9/12 h-4/5 right-0 absolute"
+        className="w-9/12 h-4/5 right-0 absolute bg-cover	bg-no-repeat"
         style={{ backgroundImage: `url(${Background})` }}
       ></div>
 

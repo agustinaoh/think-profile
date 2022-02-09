@@ -1,68 +1,79 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ThinkProfile
 
-## Available Scripts
+Femhoot is a Kahoot-alike game about women and their history within the tech world.
+The website consists in the following:
 
-In the project directory, you can run:
+ThinkProfile is a platform where you can fill in your personal and professional data and get a profile generated.
 
-### `npm start`
+## Starting 🚀
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+These instructions will allow you to get a working copy of the project on your local machine for development and testing purposes.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Prerequisites 📋
 
-### `npm test`
+What do you need to install the software?
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+You need to have installed Node JS
+```
 
-### `npm run build`
+### Installation 🔧
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Download this repository in zip or clone the repository on your device (if you clone the repository, note that you will not be able to add your commits).
+2. Open a terminal in the root folder of your repository.
+3. Install the local dependencies by running the command in the terminal:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+or
 
-### `npm run eject`
+```
+yarn install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Starting the project ⚙️
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Once you have done the previous step, **start the project every time you program**. To do this, run the command:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+or
 
-## Learn More
+```
+yarn start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Then you can see that:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- A window will open in your pre-finished browser, which will display your website.
+- The files you will be working on are inside the `src/` folder.
 
-### Code Splitting
+### Publish the project on Vercel Pages 📚
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+[Vercel](https://www.vercel.com/) is used as a Continuous Integration and Continuous Deployment (CI/CD) tool.
+The deployment of the Main branch is triggered when it is modified.
 
-### Analyzing the Bundle Size
+## Built with 🛠️
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- HTML
+- CSS (Tailwind)
+- JavaScript
+- React
 
-### Making a Progressive Web App
+## Code quality
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<!-- - Rated by Codefactor:
 
-### Advanced Configuration
+- [![CodeFactor](https://www.codefactor.io/repository/github/femhack-femhoot/femhoot/badge)](https://www.codefactor.io/repository/github/femhack-femhoot/femhoot) -->
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Author
 
-### Deployment
+- **Agustina Ohan Lesendre** [Github](https://github.com/Agustinaoh)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Thanks
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Thanks to the NUWE team for organizing this Hackathon.

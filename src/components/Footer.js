@@ -7,8 +7,21 @@ export const Footer = () => {
       <small>made with</small>
       <img src={Heart} alt="Love" className="mx-2" />
       <small>
-        <a href="https://github.com/agustinaoh">by Agustina Oh.</a>
+        <a
+          href="https://github.com/agustinaoh"
+          target={"_blank"}
+          rel="noopener noreferrer"
+        >
+          by Agustina Oh.
+        </a>
       </small>
     </footer>
   );
 };
+
+// const openInNewTab = (url) => {
+//   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+//   if (newWindow) newWindow.opener = null
+// }
+
+// onClick={() => openInNewTab("https://github.com/agustinaoh")}

@@ -23,19 +23,11 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
     <>
       {/* Background image */}
       <div
-        className="w-3/5 h-full right-0 absolute"
+        className="w-3/5 h-full right-0 absolute bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${Background})` }}
       ></div>
       <div className="grid grid-cols-8 z-1 w-full">
         <div className="z-10 p-8 col-start-2 col-span-3 bg-thinkprofile-bg">
-          {/* Close button */}
-          <button
-            onClick={() => setIsFormShown(false)}
-            className="hover:cursor right-8 absolute"
-            type="button"
-          >
-            X
-          </button>
           {/* Header */}
           <div className="flex items-end mb-8">
             <img src={Image} alt="decorative element" className="w-12 mr-6" />
@@ -190,6 +182,16 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
             >
               Save changes
             </button>
+            {/* Close button */}
+            <div className="w-full flex justify-center">
+              <button
+                onClick={() => setIsFormShown(false)}
+                className="hover:cursor mt-3 underline text-thinkprofile-aqua opacity-40 hover:opacity-100"
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
           </form>
         </div>
       </div>
