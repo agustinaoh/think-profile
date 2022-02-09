@@ -15,3 +15,8 @@ body {
 .italic {
   font-family: "Playfair Display", serif;
 }
+
+input,
+textarea {
+  border-radius: 8px;
+}

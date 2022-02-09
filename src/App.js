@@ -3,7 +3,7 @@ import { UserForm } from "./components/UserForm";
 import { UserProfile } from "./components/UserProfile";
 import Logo from "./img/logo.svg";
 import { Footer } from "./components/Footer";
-import Background from "./img/bg.jpeg";
+import { DefaultLayout } from "./components/DefaultLayout";
 
 function App() {
   // const agus = {
@@ -27,49 +27,17 @@ function App() {
     skills: "",
   };
 
-  const [isModalShown, setIsModalShown] = useState(false);
+  const [isModalShown, setIsModalShown] = useState(true);
   const [user, setUser] = useState(emptyUser);
 
   const isEmpty = Object.values(user).every((x) => x === "" || x === null);
-  const originalLayout = isModalShown || (!isModalShown && !isEmpty);
+  const secondaryLayout = isModalShown || (!isModalShown && !isEmpty);
 
   return (
     <div className="flex flex-col h-full items-center justify-center bg-thinkprofile-bg text-gray-700">
-      {!originalLayout && (
-        // Content
-        <div className="w-full h-2/5 flex">
-          {/* Right section */}
-          <div className="w-2/5 h-full flex flex-col items-start justify-between pl-20 pr-8">
-            <img
-              src={Logo}
-              alt="ThinkProfile"
-              className={
-                /* it's only shown at full size on first screen, when modal is closed and user is not defined */
-                "w-90 mb-12"
-              }
-            />
-            <span className="text-4xl font-light text-white">
-              Your professional profile, in a few clicks.
-            </span>
-
-            <button
-              type="button"
-              className="px-12 py-4 font-medium text-xl bg-thinkprofile-pink hover:cursor hover:bg-thinkprofile-red text-white"
-              style={{ letterSpacing: "1px" }}
-              onClick={() => setIsModalShown(true)}
-            >
-              Build your profile
-            </button>
-          </div>
-          {/* Image section */}
-          <div
-            className="w-3/5 h-full"
-            style={{ backgroundImage: `url(${Background})` }}
-          ></div>
-        </div>
-      )}
-
-      {originalLayout && (
+      {!secondaryLayout ? (
+        <DefaultLayout setIsModalShown={setIsModalShown} />
+      ) : (
         <>
           <img
             src={Logo}
