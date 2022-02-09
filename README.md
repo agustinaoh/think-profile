@@ -49,7 +49,7 @@ Then you can see that:
 - A window will open in your pre-finished browser, which will display your website.
 - The files you will be working on are inside the `src/` folder.
 
-### Publish the project on Vercel Pages 📚
+### Publish the project on Vercel 📚
 
 [Vercel](https://www.vercel.com/) is used as a Continuous Integration and Continuous Deployment (CI/CD) tool.
 The deployment of the Main branch is triggered when it is modified.
@@ -61,7 +61,7 @@ The deployment of the Main branch is triggered when it is modified.
 - JavaScript
 - React
 
-## Code quality
+## Code quality 🎖
 
 - Rated by Ligthouse:
   ![lighthouse](lighthouse.png)
@@ -69,10 +69,10 @@ The deployment of the Main branch is triggered when it is modified.
 
 - [![CodeFactor](https://www.codefactor.io/repository/github/agustinaoh/think-profile/badge)](https://www.codefactor.io/repository/github/agustinaoh/think-profile)
 
-## Author
+## Author 👩🏼‍💻
 
 - **Agustina Ohan Lesendre** [Github](https://github.com/Agustinaoh)
 
-## Thanks
+## Thanks 🎉
 
 Thanks to the NUWE team for organizing this Hackathon.

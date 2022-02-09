@@ -3,7 +3,7 @@ import React from "react";
 // import Delete from "../img/delete.svg";
 import Quotes from "../img/element-2.svg";
 import { Avatar } from "./Avatar";
-import Background from "../img.webp";
+import Background from "../img/bg.webp";
 
 export const UserProfile = ({ user, setIsFormShown, setUser }) => {
   const skillsArray = user.skills
@@ -19,6 +19,8 @@ export const UserProfile = ({ user, setIsFormShown, setUser }) => {
       # {skill}
     </p>
   ));
+
+  const experience = user.experience === "1" ? "year" : "years";
 
   return (
     <>
@@ -38,15 +40,23 @@ export const UserProfile = ({ user, setIsFormShown, setUser }) => {
             <p className="uppercase font-black text-5xl">
               {user.name} {user.lastName}
             </p>
-            {user.field && (
-              <p className="italic text-3xl capitalize">{user.field}</p>
-            )}
+            <div className="flex items-end">
+              {user.field && (
+                <p className="italic text-3xl capitalize mr-3">
+                  {user.field} /
+                </p>
+              )}
+              {user.experience && (
+                <p className="text-xl mr font-light">
+                  Experiece: {user.experience} {experience}
+                </p>
+              )}
+            </div>
           </div>
           <div className="">
             {user.city && <p className="font-bold text-2xl">*{user.city}</p>}
             <p className="text-xl">{user.email}</p>
           </div>
-          {/* {user.experience && <p>Years experiece: {user.experience}</p>} */}
 
           {/* Bio */}
           {user.bio && (
