@@ -1,8 +1,5 @@
 # ThinkProfile
 
-Femhoot is a Kahoot-alike game about women and their history within the tech world.
-The website consists in the following:
-
 ThinkProfile is a platform where you can fill in your personal and professional data and get a profile generated.
 
 ## Starting 🚀
