@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { UserForm } from "./components/UserForm";
 import { UserProfile } from "./components/UserProfile";
 import Logo from "./img/logo.svg";
-// import Background from "./img/bg.jpeg";
+import { Footer } from "./components/Footer";
+import Background from "./img/bg.jpeg";
 
 function App() {
   // const agus = {
@@ -34,46 +35,61 @@ function App() {
 
   return (
     <div className="flex flex-col h-full items-center justify-center bg-thinkprofile-bg text-gray-700">
-      <img
-        src={Logo}
-        alt="ThinkProfile"
-        className={
-          /* it's only shown at full size on first screen, when modal is closed and user is not defined */
-          originalLayout ? "w-40 absolute left-8 top-8" : "w-90 mb-12"
-        }
-      />
-
       {!originalLayout && (
-        <span className="text-4xl font-light text-white">
-          Your professional profile, in a few clicks.
-        </span>
-      )}
-      <div className="h-36"></div>
+        // Content
+        <div className="w-full h-2/5 flex">
+          {/* Right section */}
+          <div className="w-2/5 h-full flex flex-col items-start justify-between pl-20 pr-8">
+            <img
+              src={Logo}
+              alt="ThinkProfile"
+              className={
+                /* it's only shown at full size on first screen, when modal is closed and user is not defined */
+                "w-90 mb-12"
+              }
+            />
+            <span className="text-4xl font-light text-white">
+              Your professional profile, in a few clicks.
+            </span>
 
-      {/* If the user has no values, show the Build button */}
-      {isEmpty ? (
+            <button
+              type="button"
+              className="px-12 py-4 font-medium text-xl bg-thinkprofile-pink hover:cursor hover:bg-thinkprofile-red text-white"
+              style={{ letterSpacing: "1px" }}
+              onClick={() => setIsModalShown(true)}
+            >
+              Build your profile
+            </button>
+          </div>
+          {/* Image section */}
+          <div
+            className="w-3/5 h-full"
+            style={{ backgroundImage: `url(${Background})` }}
+          ></div>
+        </div>
+      )}
+
+      {originalLayout && (
         <>
-          {/* <h2>Welcome, let's start</h2> */}
-          <button
-            type="button"
-            className="px-12 py-4 font-medium text-xl bg-thinkprofile-pink hover:cursor hover:bg-thinkprofile-red text-white"
-            style={{ letterSpacing: "1px" }}
-            onClick={() => setIsModalShown(true)}
-          >
-            Build your profile
-          </button>
+          <img
+            src={Logo}
+            alt="ThinkProfile"
+            className="w-40 absolute left-8 top-8"
+          />
+          <Footer />
         </>
-      ) : (
-        // else if there's a user, show the UserCard (but not when the modal is opened!)
-        !isModalShown &&
-        !isEmpty && (
+      )}
+
+      {
+        // if there's a user, show the UserCard (but not when the modal is opened!)
+        !isModalShown && !isEmpty && (
           <UserProfile
             user={user}
             setIsModalShown={setIsModalShown}
             setUser={setUser}
           />
         )
-      )}
+      }
 
       {/* Opened modal */}
       {isModalShown && (
