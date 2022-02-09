@@ -1,5 +1,5 @@
 import React from "react";
-import Background from "../img/bg.jpeg";
+import Background from "../img/bg.webp";
 import Logo from "../img/logo.svg";
 
 export const DefaultLayout = ({ setIsFormShown }) => {
@@ -14,7 +14,7 @@ export const DefaultLayout = ({ setIsFormShown }) => {
 
         <button
           type="button"
-          className="px-12 py-4 font-medium text-xl bg-thinkprofile-pink hover:cursor hover:bg-thinkprofile-red text-white"
+          className="px-12 py-4 font-medium text-xl bg-thinkprofile-green hover:cursor hover:bg-thinkprofile-red text-white"
           style={{ letterSpacing: "1px" }}
           onClick={() => setIsFormShown(true)}
         >
@@ -23,7 +23,7 @@ export const DefaultLayout = ({ setIsFormShown }) => {
       </div>
       {/* Image section */}
       <div
-        className="w-3/5 h-full"
+        className="w-3/5 h-full bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${Background})` }}
       ></div>
     </div>

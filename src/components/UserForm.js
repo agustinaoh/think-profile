@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "../img/element-1.svg";
-import Background from "../img/bg.jpeg";
+import Background from "../img/bg.webp";
 
 export const UserForm = ({ user, setUser, setIsFormShown }) => {
   const inputStyle = "my-2 w-full py-2 px-4 focus:outline-none";

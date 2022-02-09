@@ -3,7 +3,7 @@ import React from "react";
 // import Delete from "../img/delete.svg";
 import Quotes from "../img/element-2.svg";
 import { Avatar } from "./Avatar";
-import Background from "../img/bg.jpeg";
+import Background from "../img/bg.webp";
 
 export const UserProfile = ({ user, setIsFormShown, setUser }) => {
   const skillsArray = user.skills
