@@ -6,23 +6,19 @@ import { Avatar } from "./Avatar";
 import Background from "../img/bg.jpeg";
 
 export const UserProfile = ({ user, setIsFormShown, setUser }) => {
-  let skills = "";
+  const skillsArray = user.skills
+    .split(",") /* separate by commas */
+    .filter((skill) => skill.length > 0) /* remove empty strings */
+    .map((skill) => skill.trim()); /* remove extra spaces from strings */
 
-  if (typeof user.skills !== undefined) {
-    const skillsArray = user.skills
-      .split(",") /* separate by commas */
-      .filter((skill) => skill.length > 0) /* remove empty strings */
-      .map((skill) => skill.trim()); /* remove extra spaces from strings */
-
-    skills = skillsArray.map((skill) => (
-      <p
-        className="whitespace-nowrap rounded-full border-2 border-white px-4 py-1 mr-2 italic"
-        key={skill}
-      >
-        # {skill}
-      </p>
-    ));
-  }
+  const skills = skillsArray.map((skill) => (
+    <p
+      className="whitespace-nowrap rounded-full border-2 border-white px-4 py-1 mr-2 italic"
+      key={skill}
+    >
+      # {skill}
+    </p>
+  ));
 
   return (
     <>
@@ -71,7 +67,21 @@ export const UserProfile = ({ user, setIsFormShown, setUser }) => {
             >
               <img src={Edit} alt="Edit" />
             </button> */}
-            <button type="button" onClick={() => setUser({})}>
+            <button
+              type="button"
+              onClick={() =>
+                setUser({
+                  name: "",
+                  lastName: "",
+                  email: "",
+                  city: "",
+                  bio: "",
+                  field: "",
+                  experience: "",
+                  skills: "",
+                })
+              }
+            >
               {/* <img src={Delete} alt="Delete" /> */}Start again
             </button>
           </div>

@@ -18,7 +18,8 @@ function App() {
   //   avatarIndex: 1,
   // };
 
-  const emptyUser = {
+  const [isFormShown, setIsFormShown] = useState(false);
+  const [user, setUser] = useState({
     name: "",
     lastName: "",
     email: "",
@@ -27,10 +28,7 @@ function App() {
     field: "",
     experience: "",
     skills: "",
-  };
-
-  const [isFormShown, setIsFormShown] = useState(false);
-  const [user, setUser] = useState(emptyUser);
+  });
 
   const isEmpty = Object.values(user).every((x) => x === "" || x === null);
   const secondaryLayout = isFormShown || (!isFormShown && !isEmpty);
