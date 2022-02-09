@@ -7,7 +7,7 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
 
   const handleSubmit = () => {
     setIsFormShown(false);
-    setUser(user);
+    setUser(...user);
   };
 
   const handleChange = (e) => {
@@ -21,6 +21,11 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
 
   return (
     <>
+      {/* Background image */}
+      <div
+        className="w-3/5 h-full right-0 absolute"
+        style={{ backgroundImage: `url(${Background})` }}
+      ></div>
       <div className="grid grid-cols-8 z-1 w-full">
         <div className="z-10 p-8 col-start-2 col-span-3 bg-thinkprofile-bg">
           {/* Close button */}
@@ -114,9 +119,8 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
                 <option value="data">Data</option>
               </select>
             </div> */}
-
+            <p className="text-white">What's your field?</p>
             <div className="flex justify-between py-2 pr-2 text-white">
-              <p>What's your field?</p>
               <label>
                 <input
                   type="radio"
@@ -174,24 +178,24 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
                 className={inputStyle}
                 type="text"
                 autoComplete="off"
-                placeholder="Years of experience"
+                placeholder="How many years of awesomeness?"
                 name="experience"
                 value={user.experience}
                 onChange={handleChange}
               />
             </div>
             <div className={`flex flex-col`}>
-              {/* <label className="mr-2">Skills</label> */}
-              <small className="text-thinkprofile-aqua">
-                (Comma separated list)
-              </small>
               <textarea
                 className={inputStyle}
-                placeholder="Don't be shy"
+                placeholder="Which are your skills? Don't be shy"
                 name="skills"
                 value={user.skills}
                 onChange={handleChange}
               />
+              {/* <label className="mr-2">Skills</label> */}
+              <small className="text-thinkprofile-aqua">
+                (Make a comma separated list)
+              </small>
             </div>
             <button
               className="px-12 py-3 mt-4 font-medium text-lg w-full bg-thinkprofile-blue hover:cursor hover:bg-thinkprofile-aqua hover:text-thinkprofile-blue text-white"
@@ -203,11 +207,6 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
           </form>
         </div>
       </div>
-      {/* Background image */}
-      <div
-        className="w-3/5 h-full right-0 absolute"
-        style={{ backgroundImage: `url(${Background})` }}
-      ></div>
     </>
   );
 };

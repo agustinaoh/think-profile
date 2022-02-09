@@ -20,3 +20,12 @@ input,
 textarea {
   border-radius: 8px;
 }
+
+#userCard {
+  background: linear-gradient(
+    152.97deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(20px);
+}
