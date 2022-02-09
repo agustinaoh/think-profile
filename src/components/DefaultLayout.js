@@ -2,7 +2,7 @@ import React from "react";
 import Background from "../img/bg.jpeg";
 import Logo from "../img/logo.svg";
 
-export const DefaultLayout = ({ setIsModalShown }) => {
+export const DefaultLayout = ({ setIsFormShown }) => {
   return (
     <div className="w-full h-2/5 flex">
       {/* Right section */}
@@ -16,7 +16,7 @@ export const DefaultLayout = ({ setIsModalShown }) => {
           type="button"
           className="px-12 py-4 font-medium text-xl bg-thinkprofile-pink hover:cursor hover:bg-thinkprofile-red text-white"
           style={{ letterSpacing: "1px" }}
-          onClick={() => setIsModalShown(true)}
+          onClick={() => setIsFormShown(true)}
         >
           Build your profile
         </button>

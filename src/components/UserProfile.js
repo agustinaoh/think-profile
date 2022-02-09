@@ -4,7 +4,7 @@ import Delete from "../img/delete.svg";
 import Quotes from "../img/element-2.svg";
 import Avatar from "../img/avatar.png";
 
-export const UserProfile = ({ user, setIsModalShown, setUser }) => {
+export const UserProfile = ({ user, setIsFormShown, setUser }) => {
   const skillsArray = user.skills
     .split(",") /* separate by commas */
     .filter((skill) => skill.length > 0) /* remove empty strings */
@@ -52,7 +52,7 @@ export const UserProfile = ({ user, setIsModalShown, setUser }) => {
           <button
             type="button"
             className="mr-4"
-            onClick={() => setIsModalShown(true)}
+            onClick={() => setIsFormShown(true)}
           >
             <img src={Edit} alt="Edit" />
           </button>

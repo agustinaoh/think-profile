@@ -27,16 +27,16 @@ function App() {
     skills: "",
   };
 
-  const [isModalShown, setIsModalShown] = useState(true);
+  const [isFormShown, setIsFormShown] = useState(false);
   const [user, setUser] = useState(emptyUser);
 
   const isEmpty = Object.values(user).every((x) => x === "" || x === null);
-  const secondaryLayout = isModalShown || (!isModalShown && !isEmpty);
+  const secondaryLayout = isFormShown || (!isFormShown && !isEmpty);
 
   return (
     <div className="flex flex-col h-full items-center justify-center bg-thinkprofile-bg text-gray-700">
       {!secondaryLayout ? (
-        <DefaultLayout setIsModalShown={setIsModalShown} />
+        <DefaultLayout setIsFormShown={setIsFormShown} />
       ) : (
         <>
           <img
@@ -50,19 +50,19 @@ function App() {
 
       {
         // if there's a user, show the UserCard (but not when the modal is opened!)
-        !isModalShown && !isEmpty && (
+        !isFormShown && !isEmpty && (
           <UserProfile
             user={user}
-            setIsModalShown={setIsModalShown}
+            setIsFormShown={setIsFormShown}
             setUser={setUser}
           />
         )
       }
 
       {/* Opened modal */}
-      {isModalShown && (
+      {isFormShown && (
         <UserForm
-          setIsModalShown={setIsModalShown}
+          setIsFormShown={setIsFormShown}
           setUser={setUser}
           user={user}
         />

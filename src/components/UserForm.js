@@ -2,11 +2,11 @@ import React from "react";
 import Image from "../img/element-1.svg";
 import Background from "../img/bg.jpeg";
 
-export const UserForm = ({ user, setUser, setIsModalShown }) => {
+export const UserForm = ({ user, setUser, setIsFormShown }) => {
   const inputStyle = "my-2 w-full py-2 px-4 focus:outline-none";
 
   const handleSubmit = () => {
-    setIsModalShown(false);
+    setIsFormShown(false);
     setUser(user);
   };
 
@@ -25,7 +25,7 @@ export const UserForm = ({ user, setUser, setIsModalShown }) => {
         <div className="z-10 p-8 col-start-2 col-span-3 bg-thinkprofile-bg">
           {/* Close button */}
           <button
-            onClick={() => setIsModalShown(false)}
+            onClick={() => setIsFormShown(false)}
             className="hover:cursor right-8 absolute"
             type="button"
           >
