@@ -5,29 +5,32 @@ import Logo from "./img/logo.svg";
 // import Background from "./img/bg.jpeg";
 
 function App() {
-  const [isModalShown, setIsModalShown] = useState(false);
-  const [user, setUser] = useState({
-    name: "Agus",
-    lastName: "Ohan",
-    email: "agustinaoh.dev@gmail.com",
-    city: "Barcelona, Spain",
+  // const agus = {
+  //   name: "Agustina",
+  //   lastName: "Ohan",
+  //   email: "agustinaoh.dev@gmail.com",
+  //   city: "Barcelona, Spain",
+  //   bio: "“Innovative Front End Developer with 5 years experience building and maintaining responsive websites in the recruiting industry. Proficient in HTML, CSS, jQuery, JavaScript and Angualr; plus modern libraries and frameworks. Passionate about usability and possess working knowledge of Adobe Photoshop & Sketch.“",
+  //   field: "Frontend",
+  //   experience: "> 1 year",
+  //   skills: "coffee, code, sleep, repeat",
+  // };
+  const emptyUser = {
+    name: "",
+    lastName: "",
+    email: "",
+    city: "",
     bio: "",
-    field: "Frontend",
-    experience: "> 1 year",
-    skills: "coffee, code, sleep, repeat",
-  });
+    field: "",
+    experience: "",
+    skills: "",
+  };
 
-  // {
-  //   name: "",
-  //   lastName: "",
-  //   email: "",
-  //   city: "",
-  //   bio: "",
-  //   field: "",
-  //   experience: "",
-  //   skills: "",
-  // }
+  const [isModalShown, setIsModalShown] = useState(false);
+  const [user, setUser] = useState(emptyUser);
+
   const isEmpty = Object.values(user).every((x) => x === "" || x === null);
+  const originalLayout = isModalShown || (!isModalShown && !isEmpty);
 
   return (
     <div className="flex flex-col h-full items-center justify-center bg-thinkprofile-bg text-gray-700">
@@ -36,14 +39,15 @@ function App() {
         alt="ThinkProfile"
         className={
           /* it's only shown at full size on first screen, when modal is closed and user is not defined */
-          isModalShown || (!isModalShown && !isEmpty)
-            ? "w-40 absolute left-8 top-8"
-            : "w-90 mb-12"
+          originalLayout ? "w-40 absolute left-8 top-8" : "w-90 mb-12"
         }
       />
-      <span className="text-4xl font-light text-white">
-        Your professional profile, in a few clicks.
-      </span>
+
+      {!originalLayout && (
+        <span className="text-4xl font-light text-white">
+          Your professional profile, in a few clicks.
+        </span>
+      )}
       <div className="h-36"></div>
 
       {/* If the user has no values, show the Build button */}

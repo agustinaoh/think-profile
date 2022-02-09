@@ -115,7 +115,7 @@ export const UserForm = ({ user, setUser, setIsModalShown }) => {
             className={inputStyle}
             type="text"
             autoComplete="off"
-            placeholder="Last Name"
+            placeholder="Years of experience"
             name="experience"
             value={user.experience}
             onChange={handleChange}

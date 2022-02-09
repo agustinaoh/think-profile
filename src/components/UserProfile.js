@@ -1,4 +1,8 @@
 import React from "react";
+import Edit from "../img/edit.svg";
+import Delete from "../img/delete.svg";
+import Quotes from "../img/element-2.svg";
+import Avatar from "../img/avatar.png";
 
 export const UserProfile = ({ user, setIsModalShown, setUser }) => {
   const skillsArray = user.skills
@@ -7,36 +11,57 @@ export const UserProfile = ({ user, setIsModalShown, setUser }) => {
     .map((skill) => skill.trim()); /* remove extra spaces from strings */
 
   const skills = skillsArray.map((skill) => (
-    <p className="rounded-full bg-gray-300 px-4 py-1 mr-2" key={skill}>
-      #{skill}
+    <p
+      className="rounded-full border-2 border-white px-4 py-1 mr-2 italic"
+      key={skill}
+    >
+      # {skill}
     </p>
   ));
 
   return (
-    <div className="bg-blue-50 w-2/3 p-8">
-      <p>
-        {user.name} {user.lastName}
-      </p>
-      {user.field && <p>Field: {user.field}</p>}
-      {user.experience && <p>Years experiece: {user.experience}</p>}
-      <p>{user.email}</p>
-      <p>{user.city}</p>
-      <p>{user.bio}</p>
-      {skills && <div className="inline-flex">{skills}</div>}
-      <button
-        type="button"
-        className="px-8 py-4 border border-red-300 hover:cursor mt-4 block"
-        onClick={() => setIsModalShown(true)}
-      >
-        Edit your profile
-      </button>
-      <button
-        type="button"
-        className="px-8 py-4 border border-red-300 hover:cursor mt-4 block"
-        onClick={() => setUser({})}
-      >
-        Restart
-      </button>
+    <div className="bg-white bg-opacity-20 text-white w-2/3 p-8 relative flex items-start rounded-2xl">
+      {/* Content section */}
+      <div>
+        <div className="mb-10">
+          <p className="uppercase font-black text-5xl">
+            {user.name} {user.lastName}
+          </p>
+          {user.field && (
+            <p className="italic text-3xl capitalize">{user.field}</p>
+          )}
+        </div>
+        <div className="">
+          {user.city && <p className="font-bold text-2xl">*{user.city}</p>}
+          <p className="text-xl">{user.email}</p>
+        </div>
+        {/* {user.experience && <p>Years experiece: {user.experience}</p>} */}
+
+        {/* Bio */}
+        {user.bio && (
+          <div className="my-20 flex items-start">
+            <img src={Quotes} alt="Quotes" className="mr-6" />
+            <div>
+              <p className="font-extrabold text-2xl">ABOUT ME</p>
+              <p className="text-xl">{user.bio}</p>
+            </div>
+          </div>
+        )}
+        {skills && <div className="inline-flex">{skills}</div>}
+        <div className="absolute bottom-8 right-8">
+          <button
+            type="button"
+            className="mr-4"
+            onClick={() => setIsModalShown(true)}
+          >
+            <img src={Edit} alt="Edit" />
+          </button>
+          <button type="button" onClick={() => setUser({})}>
+            <img src={Delete} alt="Delete" />
+          </button>
+        </div>
+      </div>
+      <img src={Avatar} alt="Avatar" className="ml-20" />
     </div>
   );
 };
