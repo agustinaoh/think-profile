@@ -6,29 +6,30 @@ import { Footer } from "./components/Footer";
 import { DefaultLayout } from "./components/DefaultLayout";
 
 function App() {
-  const agus = {
-    name: "Agustina",
-    lastName: "Ohan",
-    email: "agustinaoh.dev@gmail.com",
-    city: "Barcelona, Spain",
-    bio: "“Innovative Front End Developer with 5 years experience building and maintaining responsive websites in the recruiting industry. Proficient in HTML, CSS, jQuery, JavaScript and Angualr; plus modern libraries and frameworks. Passionate about usability and possess working knowledge of Adobe Photoshop & Sketch.“",
-    field: "Frontend",
-    experience: "> 1 year",
-    skills: "coffee, code, sleep, repeat",
-  };
-  // const emptyUser = {
-  //   name: "",
-  //   lastName: "",
-  //   email: "",
-  //   city: "",
-  //   bio: "",
-  //   field: "",
-  //   experience: "",
-  //   skills: "",
+  // const agus = {
+  //   name: "Agustina",
+  //   lastName: "Ohan",
+  //   email: "agustinaoh.dev@gmail.com",
+  //   city: "Barcelona, Spain",
+  //   bio: "“Innovative Front End Developer with 5 years experience building and maintaining responsive websites in the recruiting industry. Proficient in HTML, CSS, jQuery, JavaScript and Angualr; plus modern libraries and frameworks. Passionate about usability and possess working knowledge of Adobe Photoshop & Sketch.“",
+  //   field: "Frontend",
+  //   experience: "> 1 year",
+  //   skills: "coffee, code, sleep, repeat",
+  //   avatarIndex: 1,
   // };
+  const emptyUser = {
+    name: "",
+    lastName: "",
+    email: "",
+    city: "",
+    bio: "",
+    field: "",
+    experience: "",
+    skills: "",
+  };
 
   const [isFormShown, setIsFormShown] = useState(false);
-  const [user, setUser] = useState(agus);
+  const [user, setUser] = useState(emptyUser);
 
   const isEmpty = Object.values(user).every((x) => x === "" || x === null);
   const secondaryLayout = isFormShown || (!isFormShown && !isEmpty);

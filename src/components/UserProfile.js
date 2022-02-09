@@ -60,15 +60,15 @@ export const UserProfile = ({ user, setIsFormShown, setUser }) => {
           )}
           {skills && <div className="inline-flex">{skills}</div>}
           <div className="absolute bottom-8 right-8">
-            <button
+            {/* <button
               type="button"
               className="mr-4"
               onClick={() => setIsFormShown(true)}
             >
               <img src={Edit} alt="Edit" />
-            </button>
+            </button> */}
             <button type="button" onClick={() => setUser({})}>
-              <img src={Delete} alt="Delete" />
+              {/* <img src={Delete} alt="Delete" /> */}Start again
             </button>
           </div>
         </div>

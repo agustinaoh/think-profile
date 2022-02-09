@@ -7,7 +7,7 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
 
   const handleSubmit = () => {
     setIsFormShown(false);
-    setUser(...user);
+    setUser(user);
   };
 
   const handleChange = (e) => {
@@ -105,20 +105,6 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
                 onChange={handleChange}
               />
             </div>
-            {/* <div>
-              <select
-                className={inputStyle}
-                id="field"
-                value={user.field}
-                onChange={handleChange}
-                name="field"
-              >
-                <option value="frontend">Frontend</option>
-                <option value="backend">Backend</option>
-                <option value="mobile">Mobile</option>
-                <option value="data">Data</option>
-              </select>
-            </div> */}
             <p className="text-white">What's your field?</p>
             <div className="flex justify-between py-2 pr-2 text-white">
               <label>
@@ -187,7 +173,7 @@ export const UserForm = ({ user, setUser, setIsFormShown }) => {
             <div className={`flex flex-col`}>
               <textarea
                 className={inputStyle}
-                placeholder="Which are your skills? Don't be shy"
+                placeholder="What are your skills? Don't be shy"
                 name="skills"
                 value={user.skills}
                 onChange={handleChange}
