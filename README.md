@@ -63,7 +63,7 @@ The deployment of the Main branch is triggered when it is modified.
 
 ## Code quality 🎖
 
-- Rated by Ligthouse:
+- Rated by Lighthouse:
   ![lighthouse](lighthouse.png)
 - Rated by Codefactor:
 
